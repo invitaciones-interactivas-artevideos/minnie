@@ -391,6 +391,22 @@
            ADAPTACIÓN EXCLUSIVA PARA CELULARES
            ======================================================== */
         @media (max-width: 480px) {
+            /* Ajuste del tamaño del círculo del contador en celular */
+    .circulo-contador {
+        width: 300px !important;  /* Ajusta este valor para agrandar el círculo */
+        height: 300px !important; /* Debe ser igual al width para que sea un círculo perfecto */
+        border-radius: 50% !important;
+        margin: 20px auto !important; /* Mantiene el círculo centrado */
+    }
+            /* Ajustar posición vertical de los números dentro del círculo */
+    .circulo-contador #contador {
+        margin-top: -30px !important; /* Prueba con -10px, -20px o -30px para subir más */
+    }
+
+    /* Si los textos de "Días, Horas, Minutos" están separados, ajústalos aquí */
+    .contenedor-labels-contador {
+        margin-top: -15px !important; 
+    }
     
             /* 1. FUENTE DE "FALTAN" Y TAMAÑO DE CONTADOR (Círculo) */
             :root {
@@ -398,10 +414,16 @@
                 --imagen-contador-ancho: 120px;
             } /* <--- AQUÍ SE CIERRA EL ROOT CORRECTAMENTE */
 
-            /* Regla para el título del contador ("Faltan") */
-            .circulo-contador h3.texto-dorado {
-                font-size: 4rem !important;
-            }
+           /* Ajuste para que "Faltan" sea idéntico a "¡NO FALTES!" */
+    .circulo-contador h3.texto-dorado {
+        font-size: 2.5rem !important;        /* Tamaño igual al que definimos para el cel */
+        font-family: var(--fuente-titulos) !important; /* Misma fuente que "No Faltes" */
+        color: #e6007e !important;            /* Color sólido exacto */
+        background: none !important;         /* Quitamos el degradado dorado */
+        -webkit-background-clip: unset !important;
+        text-shadow: none !important;         /* Si "No Faltes" no tiene sombra, esto la quita */
+        font-weight: 600 !important;
+    }
             /* =========================================
                2. TAMAÑOS DE IMÁGENES PNG (SOLO CELULAR)
                ========================================= */
