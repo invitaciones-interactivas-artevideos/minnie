@@ -387,21 +387,24 @@
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
         .oculto { display: none !important; }
 
-        /* ========================================================
+   /* ========================================================
            ADAPTACIÓN EXCLUSIVA PARA CELULARES
            ======================================================== */
         @media (max-width: 480px) {
     
-    /* 1. FUENTE DE "FALTAN" Y TAMAÑO DE CONTADOR (Círculo) */
-    :root {
-        --fuente-contador-titulo: 'Walt Disney Script', cursive !important; /* Fuerza la letra Disney */
-        --imagen-contador-ancho: 100px; /* Tamaño del sapito/adorno del círculo */
-    }
+            /* 1. FUENTE DE "FALTAN" Y TAMAÑO DE CONTADOR (Círculo) */
+            :root {
+                --fuente-contador-titulo: 'Walt Disney Script', cursive !important;
+                --imagen-contador-ancho: 120px;
+            } /* <--- AQUÍ SE CIERRA EL ROOT CORRECTAMENTE */
 
-    /* =========================================
-       2. TAMAÑOS DE IMÁGENES PNG (SOLO CELULAR)
-       ========================================= */
-       
+            /* Regla para el título del contador ("Faltan") */
+            .circulo-contador h3.texto-dorado {
+                font-size: 2.5rem !important;
+            }
+            /* =========================================
+               2. TAMAÑOS DE IMÁGENES PNG (SOLO CELULAR)
+               ========================================= */
     /* A. Sección Confirmar Asistencia (imagen5) */
     .img-box[src="imagen5.png"] {
         max-width: 55vw !important; /* Cambia este 25 por uno mayor para agrandar o menor para achicar */
