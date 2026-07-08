@@ -367,29 +367,34 @@
         @media (max-width: 480px) {
             :root {
                 --fuente-contador-titulo: 'Walt Disney Script', cursive;
-                --imagen-contador-ancho: 120px;
+                --imagen-contador-ancho: 150px;
             }
 
-            .circulo-contador {
-                width: 230px; 
-                height: 230px; 
-                margin: 20px auto; 
-            }
-            .circulo-contador #contador {
-                margin-top: -15px; 
-            }
-            .contenedor-labels-contador {
-                margin-top: -15px; 
+            /* Ajuste vertical del contador en celular */
+            .circulo-contador > div {
+                transform: none !important; /* Quitamos el transform genérico para controlar con márgenes */
+                margin-top: 10px !important; /* Despega todo el bloque desde arriba */
             }
 
+            /* 1. Subir "Faltan" */
             .circulo-contador h3.texto-dorado {
-                font-size: 2.5rem !important;        
-                font-family: var(--fuente-titulos) !important; 
-                color: #e6007e !important;            
-                background: none !important;         
+                margin-top: -15px !important; /* Un número negativo sube el texto */
+                font-size: 2.5rem !important;
+                font-family: var(--fuente-titulos) !important;
+                color: #e6007e !important;
+                background: none !important;
                 -webkit-background-clip: unset !important;
-                text-shadow: none !important;         
+                text-shadow: none !important;
                 font-weight: 600 !important;
+            }
+
+            /* 2. Bajar los números y etiquetas */
+            .numeros-contador {
+                margin-top: 15px !important; /* Baja los números */
+            }
+
+            .etiquetas-contador {
+                margin-top: 10px !important; /* Baja las etiquetas de Días/Horas */
             }
 
             .img-box[src="imagen5.png"], 
