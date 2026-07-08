@@ -391,12 +391,38 @@
            ADAPTACIÓN EXCLUSIVA PARA CELULARES
            ======================================================== */
         @media (max-width: 480px) {
-    /* Agrega esto apenas empieza la sección de celular */
-    :root {
-        --imagen-contador-ancho: 120px; /* Ajusta este número para achicarla */
-    }
     
-    /* ... aquí siguen tus otros estilos de celular ... */
+    /* 1. FUENTE DE "FALTAN" Y TAMAÑO DE CONTADOR (Círculo) */
+    :root {
+        --fuente-contador-titulo: 'Walt Disney Script', cursive !important; /* Fuerza la letra Disney */
+        --imagen-contador-ancho: 100px; /* Tamaño del sapito/adorno del círculo */
+    }
+
+    /* =========================================
+       2. TAMAÑOS DE IMÁGENES PNG (SOLO CELULAR)
+       ========================================= */
+       
+    /* A. Sección Confirmar Asistencia (imagen5) */
+    .img-box[src="imagen5.png"] {
+        max-width: 55vw !important; /* Cambia este 25 por uno mayor para agrandar o menor para achicar */
+    }
+
+    /* B. Sección Contador - Adorno de afuera (imagen2) */
+    .img-box[src="imagen2.png"] {
+        max-width: 55vw !important; /* Juega con este número */
+    }
+
+    /* C. Sección Galería (Afecta a las dos de arriba en esa caja) */
+    #modulo-galeria .img-box {
+        max-width: 55vw !important; 
+    }
+
+    /* D. Sección Despedida "No faltes" (SOLO la de la izquierda) */
+    .seccion-final .img-top-left {
+        max-width: 55vw !important; 
+    }
+
+    /* (Mantén aquí debajo el resto de tus estilos del @media que ya tenías) */
             
             .portada-contenedor { padding-top: 80px; }
             .img-princesa { width: 80% !important; max-width: 200% !important; }
