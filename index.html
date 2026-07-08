@@ -391,8 +391,15 @@
            ADAPTACIÓN EXCLUSIVA PARA CELULARES
            ======================================================== */
         @media (max-width: 480px) {
+    /* Agrega esto apenas empieza la sección de celular */
+    :root {
+        --imagen-contador-ancho: 100px; /* Ajusta este número para achicarla */
+    }
+    
+    /* ... aquí siguen tus otros estilos de celular ... */
+            
             .portada-contenedor { padding-top: 45px; }
-            .img-princesa { width: 120% !important; max-width: 150% !important; }
+            .img-princesa { width: 90% !important; max-width: 200% !important; }
             .personajes-portada { margin-bottom: -60px; }
             .seccion { margin: 20px 15px; padding: 25px 15px; }
             
@@ -411,13 +418,18 @@
 
             /* AJUSTE PARA ACHICAR IMÁGENES PNG EN CELULAR AUTOMÁTICAMENTE */
             .img-box {
-                max-width: 25vw !important; /* Limita el ancho al 25% del ancho de la pantalla */
+                max-width: 20vw !important; /* Limita el ancho al 25% del ancho de la pantalla */
                 height: auto !important;
             }
             /* Excepciones para imágenes más grandes */
             .img-box[src="imagen2.png"] { max-width: 60vw !important; } 
             .img-box[src="imagen3.png"] { max-width: 40vw !important; }
-            .img-box[src="imagen8.png"] { max-width: 45vw !important; }
+            /* Reemplaza la línea de imagen8.png por esto: */
+    .img-box[src="imagen8.png"] { 
+        max-width: 65vw !important;      /* Permite que crezca un poco más */
+        width: 240px !important;         /* La hace más grande */
+        margin-right: -20px !important;  /* Al achicar el número negativo, se corre a la izquierda */
+    }
         }
     </style>
 </head>
