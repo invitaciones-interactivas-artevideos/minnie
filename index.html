@@ -15,11 +15,7 @@
         @font-face { font-family: 'Walt Disney Script'; src: url('wds052801.ttf') format('truetype'); font-weight: normal; font-style: normal;}
 
         :root {
-            /* ========================================================
-               🎨 MENÚ DE CONFIGURACIÓN FÁCIL: TEXTOS Y COLORES 🎨
-               ======================================================== */
-
-            /* --- 1. NOMBRE PRINCIPAL (Ej: "Julieta") --- */
+            /* --- 1. NOMBRE PRINCIPAL --- */
             --fuente-nombre: 'Walt Disney Script', cursive;
             --color-nombre-arriba: #ffd6eb;
             --color-nombre-abajo: #b30059;
@@ -32,12 +28,11 @@
             --tamano-titulos-pc: 1.8rem;
             --tamano-titulos-celular: 1.6rem;
 
-            /* --- NUEVO: TÍTULOS ESPECIALES (Crecí / No faltes) --- */
+            /* --- TÍTULOS ESPECIALES --- */
             --tamano-creci-pc: 3.2rem;
-            --tamano-creci-celular: 2.6rem; /* Controla el tamaño en el celu aquí */
-            
+            --tamano-creci-celular: 2.6rem; 
             --tamano-despedida-pc: 2.2rem;
-            --tamano-despedida-celular: 1.9rem; /* Controla el tamaño en el celu aquí */
+            --tamano-despedida-celular: 1.9rem; 
 
             /* --- 3. TEXTOS DORADOS / DESTELLANTES --- */
             --fuente-dorados: 'Cinzel', serif;
@@ -45,7 +40,7 @@
             --color-dorado-oscuro: #d86fa7;
             --tamano-dorados: 1.6rem;
 
-            /* --- 4. TÍTULO DEL CONTADOR ("Faltan") --- */
+            /* --- 4. TÍTULO DEL CONTADOR --- */
             --fuente-contador-titulo: 'Waltograph', cursive;
             --tamano-contador-titulo: 2.2rem;
 
@@ -61,18 +56,13 @@
             --tamano-texto-normal-pc: 1.8rem;
             --tamano-texto-normal-celular: 1.4rem;
 
-            /* ========================================================
-               👑 CONTROL DE PERSONAJES PRINCIPALES
-               ======================================================== */
+            /* --- CONTROL DE PERSONAJES --- */
             --princesa-ancho: 250px;
             --princesa-eje-X: -15px;   
             --princesa-eje-Y: -60px;  
             --imagen-contador-ancho: 150px; 
         }
 
-        /* ========================================================
-           PALETA DE COLORES Y ESTILOS GENERALES
-           ======================================================== */
         body {
             background-color: #cfd6ce; 
             font-family: 'Cormorant Garamond', serif;
@@ -149,7 +139,6 @@
             font-weight: 700;
         }
 
-        /* NUEVAS CLASES PARA LOS TÍTULOS ESPECIALES */
         .titulo-destacado {
             font-family: var(--fuente-titulos);
             font-size: var(--tamano-creci-pc);
@@ -243,21 +232,12 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* ========================================================
-           🖼️ SISTEMA DE IMÁGENES PNG DECORATIVAS PARA LOS BOXES
-           ======================================================== */
-        .img-box {
-            position: absolute;
-            z-index: 20;
-            pointer-events: none; 
-        }
-        /* Posiciones automáticas */
+        .img-box { position: absolute; z-index: 20; pointer-events: none; }
         .img-top-left { top: 0; left: 0; }
         .img-top-right { top: 0; right: 0; }
         .img-bottom-left { bottom: 0; left: 0; }
         .img-bottom-right { bottom: 0; right: 0; }
 
-        /* BOTONES */
         .btn-dorado {
             display: block;
             padding: 14px 32px;
@@ -286,7 +266,6 @@
         }
         .btn-dorado:active { transform: scale(0.97); }
 
-        /* CONTADOR */
         .circulo-contador {
             width: 300px;
             height: 300px;
@@ -325,7 +304,6 @@
             margin-top: 5px;
         }
 
-        /* DATOS BANCARIOS */
         .datos-bancarios {
             display: none; 
             background: rgba(255,255,255,0.85);
@@ -338,7 +316,6 @@
             color: #1e2e1e;
         }
 
-        /* GALERÍA */
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -357,20 +334,17 @@
         }
         .galeria-grid img:active { transform: scale(0.95); }
 
-        /* VISOR DE FOTOS (LIGHTBOX) */
         .modal-oculto { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); justify-content: center; align-items: center; flex-direction: column; }
         .modal-oculto.activo { display: flex; }
         .modal-contenido { max-width: 90%; max-height: 80vh; border-radius: 10px; border: 2px solid #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); object-fit: contain; }
         .cerrar-modal { position: absolute; top: 20px; right: 30px; color: #d4af37; font-size: 45px; font-weight: bold; cursor: pointer; z-index: 2001; }
 
-        /* MÚSICA */
         .music-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
             width: 55px;
             height: 55px;
-            /* Botón Rosado */
             background: linear-gradient(135deg, #ff85c2, #e6007e); 
             border: 2px solid #fff;
             border-radius: 50%;
@@ -387,68 +361,44 @@
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
         .oculto { display: none !important; }
 
-   /* ========================================================
+        /* ========================================================
            ADAPTACIÓN EXCLUSIVA PARA CELULARES
            ======================================================== */
         @media (max-width: 480px) {
-            /* Ajuste del tamaño del círculo del contador en celular */
-    .circulo-contador {
-        width: 300px !important;  /* Ajusta este valor para agrandar el círculo */
-        height: 300px !important; /* Debe ser igual al width para que sea un círculo perfecto */
-        border-radius: 50% !important;
-        margin: 20px auto !important; /* Mantiene el círculo centrado */
-    }
-            /* Ajustar posición vertical de los números dentro del círculo */
-    .circulo-contador #contador {
-        margin-top: -30px !important; /* Prueba con -10px, -20px o -30px para subir más */
-    }
-
-    /* Si los textos de "Días, Horas, Minutos" están separados, ajústalos aquí */
-    .contenedor-labels-contador {
-        margin-top: -15px !important; 
-    }
-    
-            /* 1. FUENTE DE "FALTAN" Y TAMAÑO DE CONTADOR (Círculo) */
             :root {
-                --fuente-contador-titulo: 'Walt Disney Script', cursive !important;
+                --fuente-contador-titulo: 'Walt Disney Script', cursive;
                 --imagen-contador-ancho: 120px;
-            } /* <--- AQUÍ SE CIERRA EL ROOT CORRECTAMENTE */
+            }
 
-           /* Ajuste para que "Faltan" sea idéntico a "¡NO FALTES!" */
-    .circulo-contador h3.texto-dorado {
-        font-size: 2.5rem !important;        /* Tamaño igual al que definimos para el cel */
-        font-family: var(--fuente-titulos) !important; /* Misma fuente que "No Faltes" */
-        color: #e6007e !important;            /* Color sólido exacto */
-        background: none !important;         /* Quitamos el degradado dorado */
-        -webkit-background-clip: unset !important;
-        text-shadow: none !important;         /* Si "No Faltes" no tiene sombra, esto la quita */
-        font-weight: 600 !important;
-    }
-            /* =========================================
-               2. TAMAÑOS DE IMÁGENES PNG (SOLO CELULAR)
-               ========================================= */
-    /* A. Sección Confirmar Asistencia (imagen5) */
-    .img-box[src="imagen5.png"] {
-        max-width: 55vw !important; /* Cambia este 25 por uno mayor para agrandar o menor para achicar */
-    }
+            .circulo-contador {
+                width: 230px; 
+                height: 230px; 
+                margin: 20px auto; 
+            }
+            .circulo-contador #contador {
+                margin-top: -15px; 
+            }
+            .contenedor-labels-contador {
+                margin-top: -15px; 
+            }
 
-    /* B. Sección Contador - Adorno de afuera (imagen2) */
-    .img-box[src="imagen2.png"] {
-        max-width: 55vw !important; /* Juega con este número */
-    }
+            .circulo-contador h3.texto-dorado {
+                font-size: 2.5rem !important;        
+                font-family: var(--fuente-titulos) !important; 
+                color: #e6007e !important;            
+                background: none !important;         
+                -webkit-background-clip: unset !important;
+                text-shadow: none !important;         
+                font-weight: 600 !important;
+            }
 
-    /* C. Sección Galería (Afecta a las dos de arriba en esa caja) */
-    #modulo-galeria .img-box {
-        max-width: 55vw !important; 
-    }
+            .img-box[src="imagen5.png"], 
+            .img-box[src="imagen2.png"], 
+            #modulo-galeria .img-box, 
+            .seccion-final .img-top-left {
+                max-width: 55vw !important; 
+            }
 
-    /* D. Sección Despedida "No faltes" (SOLO la de la izquierda) */
-    .seccion-final .img-top-left {
-        max-width: 55vw !important; 
-    }
-
-    /* (Mantén aquí debajo el resto de tus estilos del @media que ya tenías) */
-            
             .portada-contenedor { padding-top: 80px; }
             .img-princesa { width: 80% !important; max-width: 200% !important; }
             .personajes-portada { margin-bottom: -80px; }
@@ -456,31 +406,24 @@
             
             .nombre-cursiva { font-size: var(--tamano-nombre-celular) !important; }
             .titulo-seccion { font-size: var(--tamano-titulos-celular) !important; }
-            
-            /* Nuevas asignaciones para los títulos modificados */
             .titulo-destacado { font-size: var(--tamano-creci-celular) !important; }
             .titulo-despedida { font-size: var(--tamano-despedida-celular) !important; }
-
             .texto-normal { font-size: var(--tamano-texto-normal-celular) !important; }
             .numeros-contador { font-size: var(--tamano-contador-numeros-celular) !important; }
             
-            .circulo-contador { width: 230px; height: 230px; }
             .galeria-grid img { height: 130px; }
 
-            /* AJUSTE PARA ACHICAR IMÁGENES PNG EN CELULAR AUTOMÁTICAMENTE */
             .img-box {
-                max-width: 20vw !important; /* Limita el ancho al 25% del ancho de la pantalla */
+                max-width: 20vw !important; 
                 height: auto !important;
             }
-            /* Excepciones para imágenes más grandes */
-            .img-box[src="imagen2.png"] { max-width: 60vw !important; } 
+            
             .img-box[src="imagen3.png"] { max-width: 40vw !important; }
-            /* Reemplaza la línea de imagen8.png por esto: */
-    .img-box[src="imagen8.png"] { 
-        max-width: 65vw !important;      /* Permite que crezca un poco más */
-        width: 150px !important;         /* La hace más grande */
-        margin-right: -80px !important;  /* Al achicar el número negativo, se corre a la izquierda */
-    }
+            .img-box[src="imagen8.png"] { 
+                max-width: 65vw !important;      
+                width: 150px !important;         
+                margin-right: -40px !important;  
+            }
         }
     </style>
 </head>
@@ -505,13 +448,12 @@
                 </div>
                 <div class="textos-portada">
                     <h1 class="nombre-cursiva">Julieta</h1>
-                    <h2 class="texto-dorado" style="font-family: 'Cinzel', serif; font-size: 1.6rem; margin-top: -5px; font-weight: bold;"></h2>
                     <h3 class="texto-limpio" style="font-size: var(--tamano-dorados);">MI PRIMER AÑITO</h3>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN 1: MENSAJE CENTRAL (Box 1) -->
+        <!-- SECCIÓN 1: MENSAJE CENTRAL -->
         <div class="seccion" style="margin-top: 20px; margin-bottom: 80px;">
             <img src="imagen1.png" class="img-box img-top-left" style="display: block; width: 80px; margin-top: -20px; margin-left: -20px;" alt="">
             <p class="texto-normal" style="margin: 0;">
@@ -520,7 +462,7 @@
             </p>
         </div>
 
-        <!-- SECCIÓN 2: FECHA Y CONTADOR (Box 2) -->
+        <!-- SECCIÓN 2: FECHA Y CONTADOR -->
         <div class="seccion">
             <img src="imagen2.png" class="img-box img-bottom-right" style="display: block; width: 300px; margin-top: -20px; margin-right: -20px;" alt="">
             <img src="imagen9.png" class="img-box img-top-right" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
@@ -539,7 +481,7 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 3: LUGAR (Box 3) -->
+        <!-- SECCIÓN 3: LUGAR -->
         <div class="seccion">
             <img src="imagen3.png" class="img-box img-bottom-right" style="display: block; width: 180px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1);" alt="">
             <h2 class="titulo-seccion">DÓNDE</h2>
@@ -553,7 +495,7 @@
             <a href="https://maps.app.goo.gl/TADQZGZfM13D286x6" target="_blank" class="btn-dorado">UBICACIÓN GPS</a>
         </div>
 
-        <!-- SECCIÓN 4: CÓDIGO DE VESTIMENTA (Box 4) -->
+        <!-- SECCIÓN 4: CÓDIGO DE VESTIMENTA -->
         <div class="seccion" id="modulo-vestimenta">
             <img src="imagen4.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <h2 class="titulo-seccion">CÓDIGO DE VESTIMENTA</h2>
@@ -563,7 +505,7 @@
             <p class="texto-normal" style="margin-top: 0; font-size: 1.2rem;">EN TODAS SUS TONALIDADES</p>
         </div>
 
-        <!-- SECCIÓN 5: CONFIRMACIÓN (Box 5) -->
+        <!-- SECCIÓN 5: CONFIRMACIÓN -->
         <div class="seccion">
             <img src="imagen5.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="">
             <h2 class="titulo-seccion">CONFIRMA ASISTENCIA</h2>
@@ -572,7 +514,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScZhjYcfePL1Ylu4gyruySPntMRvHBywHx09yzgDPboeVvNSQ/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SÍ ASISTIRÉ</a>
         </div>
 
-        <!-- SECCIÓN 6: REGALOS Y DATOS BANCARIOS (Box 6) -->
+        <!-- SECCIÓN 6: REGALOS Y DATOS BANCARIOS -->
         <div class="seccion" id="modulo-regalos">
             <img src="imagen6.png" class="img-box img-bottom-right" style="display: block; width: 100px; margin-bottom: -20px; margin-right: -10px;" alt="">
             <h2 class="titulo-seccion">REGALOS</h2>
@@ -589,7 +531,7 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 7: MÚSICA (Box 7) -->
+        <!-- SECCIÓN 7: MÚSICA -->
         <div class="seccion" id="modulo-musica">
             <img src="imagen7.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <h2 class="titulo-seccion">SUGERIR MÚSICA</h2>
@@ -597,7 +539,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0M2amKtZmo0LQ6-le8baC1yZ47R-IweK83PalYt0EIObJGA/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SUGERIR CANCIÓN</a>
         </div>
 
-        <!-- SECCIÓN 8: ÁLBUM DE FOTOS (Box 8) -->
+        <!-- SECCIÓN 8: ÁLBUM DE FOTOS -->
         <div class="seccion" id="modulo-album">
             <img src="imagen8.png" class="img-box img-bottom-right" style="display: block; width: 200px; margin-top: -20px; margin-right: -90px;" alt="">
             <h2 class="titulo-seccion">ÁLBUM DE FOTOS</h2>
@@ -605,7 +547,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScmQNGoapK8xgvTQfr6dpjUac8bcL_V44ABJwGHziPkILef2A/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SUBIR FOTOS</a>
         </div>
 
-        <!-- SECCIÓN 9: INSTAGRAM (Box 9) -->
+        <!-- SECCIÓN 9: INSTAGRAM -->
         <div class="seccion" id="modulo-instagram">
             <img src="imagen9.png" class="img-box img-top-right" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="">
             <h2 class="titulo-seccion">INSTAGRAM</h2>
@@ -613,7 +555,7 @@
             <a href="#" target="_blank" class="btn-dorado">IR A INSTAGRAM</a>
         </div>
 
-        <!-- GALERÍA DE FOTOS (Box 10) -->
+        <!-- GALERÍA DE FOTOS -->
         <div class="seccion" id="modulo-galeria">
             <img src="imagen10.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <img src="imagen9.png" class="img-box img-top-right" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
@@ -638,7 +580,7 @@
             </div>
         </div>
 
-        <!-- DESPEDIDA FINAL (Box 11) -->
+        <!-- DESPEDIDA FINAL -->
         <div class="seccion seccion-final" style="text-align: center; margin-top: 20px;">
             <img src="imagen9.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <img src="imagen3.png" class="img-box img-bottom-right" style="display: block; width: 140px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1);" alt="">
@@ -649,14 +591,14 @@
 
     </div>
 
-    <!-- ESTRUCTURA DEL VISOR DE FOTOS (LIGHTBOX) -->
+    <!-- VISOR DE FOTOS (LIGHTBOX) -->
     <div id="modal-galeria" class="modal-oculto" onclick="cerrarModal()">
         <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
         <img id="img-modal" class="modal-contenido" src="" alt="Foto Ampliada">
     </div>
 
     <script>
-        // --- CONTROL DE MÓDULOS (true = Activo, false = Oculto) ---
+        // --- CONTROL DE MÓDULOS ---
         const MOSTRAR_VESTIMENTA = false;   
         const MOSTRAR_REGALOS = false;      
         const MOSTRAR_SUGERIR_MUSICA = false;
@@ -673,11 +615,7 @@
 
         function mostrarDatosBancarios() {
             const caja = document.getElementById('caja-banco');
-            if (caja.style.display === "block") {
-                caja.style.display = "none";
-            } else {
-                caja.style.display = "block";
-            }
+            caja.style.display = (caja.style.display === "block") ? "none" : "block";
         }
 
         const modal = document.getElementById('modal-galeria');
@@ -697,7 +635,7 @@
             setTimeout(() => { imgModal.src = ""; }, 200); 
         }
 
-        // --- LÓGICA DEL CONTADOR ---
+        // --- CONTADOR ---
         const fechaEvento = new Date(2026, 10, 4, 21, 0, 0).getTime(); 
 
         const x = setInterval(function() {
@@ -721,6 +659,7 @@
             }
         }, 1000);
 
+        // --- MÚSICA ---
         const audio = document.getElementById("audio-player");
         const btnMusica = document.getElementById("btn-musica");
         let reproduciendo = false;
