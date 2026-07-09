@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minnie rosada - Invitación</title>
 
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Pinyon+Script&family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -41,7 +42,7 @@
 
             /* --- 4. TÍTULO DEL CONTADOR --- */
             --fuente-contador-titulo: 'Waltograph', cursive;
-            --tamano-contador-titulo: 2.5rem; /* Un poco más grande a petición */
+            --tamano-contador-titulo: 2.5rem;
 
             /* --- 5. NÚMEROS DEL CONTADOR --- */
             --fuente-contador-numeros: 'Cinzel', serif;
@@ -365,9 +366,7 @@
            ======================================================== */
         @media (max-width: 480px) {
             
-            /* MENU DE AJUSTES INDEPENDIENTES PARA CADA IMAGEN EN CELULAR 
-               Puedes cambiar el ancho (width), arriba/abajo (top/bottom) e izquierda/derecha (left/right) libremente.
-            */
+            /* MENU DE AJUSTES INDEPENDIENTES PARA CADA IMAGEN EN CELULAR */
             :root {
                 /* Imagen Portada (Nueva) */
                 --img-nombre-ancho: 80px;
@@ -384,7 +383,7 @@
                 --img2-bottom: -20px;
                 --img2-right: -20px;
 
-                --img9-seccion2-ancho: 100px; /* Forzado igual al de la seccion final */
+                --img9-seccion2-ancho: 100px; 
                 --img9-seccion2-top: -20px;
                 --img9-seccion2-right: 0px;
 
@@ -401,12 +400,12 @@
                 /* Sección 5 (Confirmación) - imagen5.png */
                 --img5-ancho: 100px;
                 --img5-top: -20px;
-                --img5-left: -10px;
+                --img5-left: -20px;
 
                 /* Sección 6 (Regalos) - imagen6.png */
                 --img6-ancho: 100px;
                 --img6-bottom: -20px;
-                --img6-right: -10px;
+                --img6-right: 0px;
 
                 /* Sección 7 (Música) - imagen7.png */
                 --img7-ancho: 100px;
@@ -414,9 +413,9 @@
                 --img7-left: -20px;
 
                 /* Sección 8 (Álbum) - imagen8.png */
-                --img8-ancho: 170px;
+                --img8-ancho: 180px;
                 --img8-bottom: -20px;
-                --img8-right: -5px;
+                --img8-right: 0px;
 
                 /* Sección 9 (Instagram) - imagen9.png */
                 --img9-seccion9-ancho: 100px;
@@ -426,11 +425,12 @@
                 /* Galería - imagen10.png e imagen9.png */
                 --img10-galeria-ancho: 100px;
                 --img10-galeria-top: -20px;
-                --img10-galeria-left: -10px;
+                --img10-galeria-left: -20px;
 
+                /* AJUSTE IMAGEN 9 GALERÍA: Se mantiene la opción de mover de arriba a abajo y cambiar tamaño */
                 --img9-galeria-ancho: 100px;
                 --img9-galeria-top: -20px;
-                --img9-galeria-right: -20px;
+                --img9-galeria-left: 50%; /* Se mantiene centrada por defecto mediante CSS */
 
                 /* Despedida Final - imagen9.png e imagen3.png */
                 --img9-final-ancho: 100px;
@@ -455,7 +455,16 @@
             .cel-img8 { width: var(--img8-ancho) !important; bottom: var(--img8-bottom) !important; right: var(--img8-right) !important; }
             .cel-img9-sec9 { width: var(--img9-seccion9-ancho) !important; top: var(--img9-seccion9-top) !important; right: var(--img9-seccion9-right) !important; }
             .cel-img10-gal { width: var(--img10-galeria-ancho) !important; top: var(--img10-galeria-top) !important; left: var(--img10-galeria-left) !important; }
-            .cel-img9-gal { width: var(--img9-galeria-ancho) !important; top: var(--img9-galeria-top) !important; right: var(--img9-galeria-right) !important; }
+            
+            /* REGLA EXCLUSIVA PARA EL CENTRADO DE LA IMAGEN 9 EN LA GALERÍA */
+            .cel-img9-gal { 
+                width: var(--img9-galeria-ancho) !important; 
+                top: var(--img9-galeria-top) !important; 
+                left: var(--img9-galeria-left) !important; 
+                right: auto !important; 
+                transform: translateX(-50%) !important; 
+            }
+            
             .cel-img9-fin { width: var(--img9-final-ancho) !important; top: var(--img9-final-top) !important; left: var(--img9-final-left) !important; }
             .cel-img3-fin { width: var(--img3-final-ancho) !important; bottom: var(--img3-final-bottom) !important; right: var(--img3-final-right) !important; }
 
@@ -508,6 +517,7 @@
 
     <div class="app-container">
 
+        <!-- PORTADA -->
         <div class="portada-contenedor">
             <div class="grupo-portada">
                 <div class="personajes-portada">
@@ -521,6 +531,7 @@
             </div>
         </div>
 
+        <!-- SECCIÓN 1: MENSAJE CENTRAL -->
         <div class="seccion" style="margin-top: 20px; margin-bottom: 80px;">
             <img src="imagen1.png" class="img-box img-top-left cel-img1" style="display: block; width: 80px; margin-top: -20px; margin-left: -20px;" alt="">
             <p class="texto-normal" style="margin: 0;">
@@ -529,6 +540,7 @@
             </p>
         </div>
 
+        <!-- SECCIÓN 2: FECHA Y CONTADOR -->
         <div class="seccion">
             <img src="imagen2.png" class="img-box img-bottom-right cel-img2" style="display: block; width: 300px; margin-top: -20px; margin-right: -20px;" alt="">
             <img src="imagen9.png" class="img-box img-top-right cel-img9-sec2" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px;" alt="">
@@ -547,6 +559,7 @@
             </div>
         </div>
 
+        <!-- SECCIÓN 3: LUGAR -->
         <div class="seccion">
             <img src="imagen3.png" class="img-box img-bottom-right cel-img3" style="display: block; width: 180px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1); bottom: 0; right: 0;" alt="">
             <h2 class="titulo-seccion">DÓNDE</h2>
@@ -560,6 +573,7 @@
             <a href="https://maps.app.goo.gl/TADQZGZfM13D286x6" target="_blank" class="btn-dorado">UBICACIÓN GPS</a>
         </div>
 
+        <!-- SECCIÓN 4: CÓDIGO DE VESTIMENTA -->
         <div class="seccion" id="modulo-vestimenta">
             <img src="imagen4.png" class="img-box img-top-left cel-img4" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <h2 class="titulo-seccion">CÓDIGO DE VESTIMENTA</h2>
@@ -569,6 +583,7 @@
             <p class="texto-normal" style="margin-top: 0; font-size: 1.2rem;">EN TODAS SUS TONALIDADES</p>
         </div>
 
+        <!-- SECCIÓN 5: CONFIRMACIÓN -->
         <div class="seccion">
             <img src="imagen5.png" class="img-box img-top-left cel-img5" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="">
             <h2 class="titulo-seccion">CONFIRMA ASISTENCIA</h2>
@@ -577,6 +592,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScZhjYcfePL1Ylu4gyruySPntMRvHBywHx09yzgDPboeVvNSQ/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SÍ ASISTIRÉ</a>
         </div>
 
+        <!-- SECCIÓN 6: REGALOS Y DATOS BANCARIOS -->
         <div class="seccion" id="modulo-regalos">
             <img src="imagen6.png" class="img-box img-bottom-right cel-img6" style="display: block; width: 100px; margin-bottom: -20px; margin-right: -10px;" alt="">
             <h2 class="titulo-seccion">REGALOS</h2>
@@ -593,6 +609,7 @@
             </div>
         </div>
 
+        <!-- SECCIÓN 7: MÚSICA -->
         <div class="seccion" id="modulo-musica">
             <img src="imagen7.png" class="img-box img-top-left cel-img7" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <h2 class="titulo-seccion">SUGERIR MÚSICA</h2>
@@ -600,6 +617,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0M2amKtZmo0LQ6-le8baC1yZ47R-IweK83PalYt0EIObJGA/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SUGERIR CANCIÓN</a>
         </div>
 
+        <!-- SECCIÓN 8: ÁLBUM DE FOTOS -->
         <div class="seccion" id="modulo-album">
             <img src="imagen8.png" class="img-box img-bottom-right cel-img8" style="display: block; width: 200px; margin-top: -20px; margin-right: -90px;" alt="">
             <h2 class="titulo-seccion">ÁLBUM DE FOTOS</h2>
@@ -607,6 +625,7 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScmQNGoapK8xgvTQfr6dpjUac8bcL_V44ABJwGHziPkILef2A/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SUBIR FOTOS</a>
         </div>
 
+        <!-- SECCIÓN 9: INSTAGRAM -->
         <div class="seccion" id="modulo-instagram">
             <img src="imagen9.png" class="img-box img-top-right cel-img9-sec9" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="">
             <h2 class="titulo-seccion">INSTAGRAM</h2>
@@ -614,8 +633,10 @@
             <a href="#" target="_blank" class="btn-dorado">IR A INSTAGRAM</a>
         </div>
 
+        <!-- GALERÍA DE FOTOS -->
         <div class="seccion" id="modulo-galeria">
             <img src="imagen10.png" class="img-box img-top-left cel-img10-gal" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
+            <!-- Imagen 9 con clases preparadas para el centrado automático en móvil -->
             <img src="imagen9.png" class="img-box img-top-right cel-img9-gal" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             
             <h2 class="titulo-destacado">Mirá cómo crecí!</h2>
@@ -638,6 +659,7 @@
             </div>
         </div>
 
+        <!-- DESPEDIDA FINAL -->
         <div class="seccion seccion-final" style="text-align: center; margin-top: 20px;">
             <img src="imagen9.png" class="img-box img-top-left cel-img9-fin" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <img src="imagen3.png" class="img-box img-bottom-right cel-img3-fin" style="display: block; width: 140px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1);" alt="">
@@ -648,6 +670,7 @@
 
     </div>
 
+    <!-- VISOR DE FOTOS (LIGHTBOX) -->
     <div id="modal-galeria" class="modal-oculto" onclick="cerrarModal()">
         <span class="cerrar-modal" onclick="cerrarModal()">×</span>
         <img id="img-modal" class="modal-contenido" src="" alt="Foto Ampliada">
@@ -684,7 +707,6 @@
                 e.stopPropagation(); 
                 imgModal.src = this.src;
                 modal.classList.add('activo');
-                // Empujamos un estado falso al historial del navegador
                 window.history.pushState({modalAbierto: true}, "");
             });
         });
@@ -694,15 +716,12 @@
             setTimeout(() => { imgModal.src = ""; }, 200); 
         }
 
-        // Si el usuario presiona el botón nativo de "Atrás", este evento se dispara
         window.addEventListener('popstate', function(event) {
-            // Si el modal está activo, lo cerramos en vez de salir de la app
             if (modal.classList.contains('activo')) {
                 cerrarModal();
             }
         });
 
-        // Aseguramos que si cierran el modal con la "X" o clickeando fuera, limpiemos el historial falso
         modal.addEventListener('click', function() {
             if (modal.classList.contains('activo')) {
                 window.history.back();
@@ -712,7 +731,6 @@
             e.stopPropagation();
             window.history.back();
         });
-
 
         // --- CONTADOR ---
         const fechaEvento = new Date(2026, 10, 4, 21, 0, 0).getTime(); 
