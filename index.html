@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minnie rosada - Invitación</title>
 
-    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Pinyon+Script&family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -42,7 +41,7 @@
 
             /* --- 4. TÍTULO DEL CONTADOR --- */
             --fuente-contador-titulo: 'Waltograph', cursive;
-            --tamano-contador-titulo: 2.2rem;
+            --tamano-contador-titulo: 2.5rem; /* Un poco más grande a petición */
 
             /* --- 5. NÚMEROS DEL CONTADOR --- */
             --fuente-contador-numeros: 'Cinzel', serif;
@@ -56,7 +55,7 @@
             --tamano-texto-normal-pc: 1.8rem;
             --tamano-texto-normal-celular: 1.4rem;
 
-            /* --- CONTROL DE PERSONAJES --- */
+            /* --- CONTROL DE PERSONAJES (PC) --- */
             --princesa-ancho: 250px;
             --princesa-eje-X: -15px;   
             --princesa-eje-Y: -60px;  
@@ -366,8 +365,103 @@
            ======================================================== */
         @media (max-width: 480px) {
             
+            /* MENU DE AJUSTES INDEPENDIENTES PARA CADA IMAGEN EN CELULAR 
+               Puedes cambiar el ancho (width), arriba/abajo (top/bottom) e izquierda/derecha (left/right) libremente.
+            */
+            :root {
+                /* Imagen Portada (Nueva) */
+                --img-nombre-ancho: 80px;
+                --img-nombre-right: -10px;
+                --img-nombre-bottom: -10px;
+
+                /* Sección 1 (Mensaje central) - imagen1.png */
+                --img1-ancho: 80px;
+                --img1-top: -20px;
+                --img1-left: -20px;
+
+                /* Sección 2 (Contador) - imagen2.png e imagen9.png */
+                --img2-ancho: 170px;
+                --img2-bottom: -20px;
+                --img2-right: -20px;
+
+                --img9-seccion2-ancho: 100px; /* Forzado igual al de la seccion final */
+                --img9-seccion2-top: -20px;
+                --img9-seccion2-right: -20px;
+
+                /* Sección 3 (Lugar) - imagen3.png */
+                --img3-ancho: 140px;
+                --img3-bottom: -20px;
+                --img3-right: -40px;
+
+                /* Sección 4 (Vestimenta) - imagen4.png */
+                --img4-ancho: 100px;
+                --img4-top: -20px;
+                --img4-left: -20px;
+
+                /* Sección 5 (Confirmación) - imagen5.png */
+                --img5-ancho: 100px;
+                --img5-top: -20px;
+                --img5-left: -20px;
+
+                /* Sección 6 (Regalos) - imagen6.png */
+                --img6-ancho: 100px;
+                --img6-bottom: -20px;
+                --img6-right: -10px;
+
+                /* Sección 7 (Música) - imagen7.png */
+                --img7-ancho: 100px;
+                --img7-top: -20px;
+                --img7-left: -20px;
+
+                /* Sección 8 (Álbum) - imagen8.png */
+                --img8-ancho: 170px;
+                --img8-bottom: -20px;
+                --img8-right: -55px;
+
+                /* Sección 9 (Instagram) - imagen9.png */
+                --img9-seccion9-ancho: 100px;
+                --img9-seccion9-top: -20px;
+                --img9-seccion9-right: -20px;
+
+                /* Galería - imagen10.png e imagen9.png */
+                --img10-galeria-ancho: 100px;
+                --img10-galeria-top: -20px;
+                --img10-galeria-left: -20px;
+
+                --img9-galeria-ancho: 100px;
+                --img9-galeria-top: -20px;
+                --img9-galeria-right: -20px;
+
+                /* Despedida Final - imagen9.png e imagen3.png */
+                --img9-final-ancho: 100px;
+                --img9-final-top: -20px;
+                --img9-final-left: -20px;
+
+                --img3-final-ancho: 140px;
+                --img3-final-bottom: -20px;
+                --img3-final-right: -50px;
+            }
+
+            /* --- ASIGNACIÓN DE CLASES MÓVILES EXCLUSIVAS --- */
+            .cel-img-nombre { width: var(--img-nombre-ancho) !important; right: var(--img-nombre-right) !important; bottom: var(--img-nombre-bottom) !important; }
+            .cel-img1 { width: var(--img1-ancho) !important; top: var(--img1-top) !important; left: var(--img1-left) !important; }
+            .cel-img2 { width: var(--img2-ancho) !important; bottom: var(--img2-bottom) !important; right: var(--img2-right) !important; }
+            .cel-img9-sec2 { width: var(--img9-seccion2-ancho) !important; top: var(--img9-seccion2-top) !important; right: var(--img9-seccion2-right) !important; }
+            .cel-img3 { width: var(--img3-ancho) !important; bottom: var(--img3-bottom) !important; right: var(--img3-right) !important; }
+            .cel-img4 { width: var(--img4-ancho) !important; top: var(--img4-top) !important; left: var(--img4-left) !important; }
+            .cel-img5 { width: var(--img5-ancho) !important; top: var(--img5-top) !important; left: var(--img5-left) !important; }
+            .cel-img6 { width: var(--img6-ancho) !important; bottom: var(--img6-bottom) !important; right: var(--img6-right) !important; }
+            .cel-img7 { width: var(--img7-ancho) !important; top: var(--img7-top) !important; left: var(--img7-left) !important; }
+            .cel-img8 { width: var(--img8-ancho) !important; bottom: var(--img8-bottom) !important; right: var(--img8-right) !important; }
+            .cel-img9-sec9 { width: var(--img9-seccion9-ancho) !important; top: var(--img9-seccion9-top) !important; right: var(--img9-seccion9-right) !important; }
+            .cel-img10-gal { width: var(--img10-galeria-ancho) !important; top: var(--img10-galeria-top) !important; left: var(--img10-galeria-left) !important; }
+            .cel-img9-gal { width: var(--img9-galeria-ancho) !important; top: var(--img9-galeria-top) !important; right: var(--img9-galeria-right) !important; }
+            .cel-img9-fin { width: var(--img9-final-ancho) !important; top: var(--img9-final-top) !important; left: var(--img9-final-left) !important; }
+            .cel-img3-fin { width: var(--img3-final-ancho) !important; bottom: var(--img3-final-bottom) !important; right: var(--img3-final-right) !important; }
+
+            /* --- AJUSTES DE TEXTO Y CONTENEDORES EN CELULARES --- */
             .circulo-contador h3.texto-dorado {
-                font-size: 3.2rem !important;        
+                font-size: var(--tamano-contador-titulo) !important;        
                 font-family: var(--fuente-titulos) !important; 
                 color: var(--color-titulos) !important; 
                 -webkit-text-fill-color: var(--color-titulos) !important; 
@@ -379,23 +473,9 @@
                 font-weight: 400 !important; 
             }
 
-            /* --- AQUÍ SE ACHICAN LOS TEXTOS DE DÍAS, HORAS, ETC --- */
             .etiquetas-contador {
                 font-size: 0.8rem !important; 
                 gap: 8px !important; 
-            }
-            /* Ajuste específico para la imagen9 en el contador */
-            .seccion 
-            .img-box[src="imagen9.png"] {
-                width: 100px !important; /* Cambia este valor a tu gusto (ej. 50px, 80px) */
-                margin-top: -10px !important; /* Ajusta la posición si es necesario */
-            }
-
-            .img-box[src="imagen5.png"], 
-            .img-box[src="imagen2.png"], 
-            #modulo-galeria .img-box, 
-            .seccion-final .img-top-left {
-                max-width: 55vw !important; 
             }
 
             .portada-contenedor { padding-top: 80px; }
@@ -411,18 +491,7 @@
             .numeros-contador { font-size: var(--tamano-contador-numeros-celular) !important; }
             
             .galeria-grid img { height: 130px; }
-
-            .img-box {
-                max-width: 20vw !important; 
-                height: auto !important;
-            }
-            
-            .img-box[src="imagen3.png"] { max-width: 40vw !important; }
-            .img-box[src="imagen8.png"] { 
-                max-width: 200vw !important;      
-                width: 170px !important;         
-                margin-right: -55px !important;  
-            }
+            .img-box { height: auto !important; }
         }
     </style>
 </head>
@@ -439,7 +508,6 @@
 
     <div class="app-container">
 
-        <!-- PORTADA -->
         <div class="portada-contenedor">
             <div class="grupo-portada">
                 <div class="personajes-portada">
@@ -448,23 +516,22 @@
                 <div class="textos-portada">
                     <h1 class="nombre-cursiva">Julieta</h1>
                     <h3 class="texto-limpio" style="font-size: var(--tamano-dorados);">MI PRIMER AÑITO</h3>
+                    <img src="imagenennombre.png" class="img-box img-bottom-right cel-img-nombre" style="display: block; width: 80px; bottom: -10px; right: -10px;" alt="" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN 1: MENSAJE CENTRAL -->
         <div class="seccion" style="margin-top: 20px; margin-bottom: 80px;">
-            <img src="imagen1.png" class="img-box img-top-left" style="display: block; width: 80px; margin-top: -20px; margin-left: -20px;" alt="">
+            <img src="imagen1.png" class="img-box img-top-left cel-img1" style="display: block; width: 80px; margin-top: -20px; margin-left: -20px;" alt="">
             <p class="texto-normal" style="margin: 0;">
                 Hace un año llegué para llenar<br> de amor y sonrisas cada día.<br> 
                 ¡Hoy quiero celebrar<br> mi primer añito<br> rodeada de las personas<br> que más quiero!
             </p>
         </div>
 
-        <!-- SECCIÓN 2: FECHA Y CONTADOR -->
         <div class="seccion">
-            <img src="imagen2.png" class="img-box img-bottom-right" style="display: block; width: 300px; margin-top: -20px; margin-right: -20px;" alt="">
-            <img src="imagen9.png" class="img-box img-top-right" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
+            <img src="imagen2.png" class="img-box img-bottom-right cel-img2" style="display: block; width: 300px; margin-top: -20px; margin-right: -20px;" alt="">
+            <img src="imagen9.png" class="img-box img-top-right cel-img9-sec2" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px;" alt="">
             <h2 class="titulo-seccion">SÁBADO</h2>
             <h3 class="titulo-seccion" style="margin-top: 0;">4 DE NOVIEMBRE</h3>
 
@@ -480,9 +547,8 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 3: LUGAR -->
         <div class="seccion">
-            <img src="imagen3.png" class="img-box img-bottom-right" style="display: block; width: 180px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1);" alt="">
+            <img src="imagen3.png" class="img-box img-bottom-right cel-img3" style="display: block; width: 180px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1); bottom: 0; right: 0;" alt="">
             <h2 class="titulo-seccion">DÓNDE</h2>
             <p class="texto-normal">
                 Salón Las Isabelitas<br>
@@ -494,9 +560,8 @@
             <a href="https://maps.app.goo.gl/TADQZGZfM13D286x6" target="_blank" class="btn-dorado">UBICACIÓN GPS</a>
         </div>
 
-        <!-- SECCIÓN 4: CÓDIGO DE VESTIMENTA -->
         <div class="seccion" id="modulo-vestimenta">
-            <img src="imagen4.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
+            <img src="imagen4.png" class="img-box img-top-left cel-img4" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <h2 class="titulo-seccion">CÓDIGO DE VESTIMENTA</h2>
             <p class="texto-normal" style="margin-bottom: 30px;">Elegante / Formal</p>
             <p class="texto-normal" style="margin-bottom: 20px;">Reservado el</p>
@@ -504,18 +569,16 @@
             <p class="texto-normal" style="margin-top: 0; font-size: 1.2rem;">EN TODAS SUS TONALIDADES</p>
         </div>
 
-        <!-- SECCIÓN 5: CONFIRMACIÓN -->
         <div class="seccion">
-            <img src="imagen5.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="">
+            <img src="imagen5.png" class="img-box img-top-left cel-img5" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="">
             <h2 class="titulo-seccion">CONFIRMA ASISTENCIA</h2>
             <p class="texto-normal">Para que todo sea perfecto<br>confirma asistencia hasta el</p>
             <h3 class="texto-limpio" style="font-size: 1.8rem; margin: 25px 0; text-align: center;">30 de octubre</h3>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScZhjYcfePL1Ylu4gyruySPntMRvHBywHx09yzgDPboeVvNSQ/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SÍ ASISTIRÉ</a>
         </div>
 
-        <!-- SECCIÓN 6: REGALOS Y DATOS BANCARIOS -->
         <div class="seccion" id="modulo-regalos">
-            <img src="imagen6.png" class="img-box img-bottom-right" style="display: block; width: 100px; margin-bottom: -20px; margin-right: -10px;" alt="">
+            <img src="imagen6.png" class="img-box img-bottom-right cel-img6" style="display: block; width: 100px; margin-bottom: -20px; margin-right: -10px;" alt="">
             <h2 class="titulo-seccion">REGALOS</h2>
             <p class="texto-normal" style="margin-bottom: 35px;">
                 El mejor regalo<br> es tu presencia,<br> pero si deseas tener<br> un detalle conmigo,<br> puedes hacerlo aquí:
@@ -530,34 +593,30 @@
             </div>
         </div>
 
-        <!-- SECCIÓN 7: MÚSICA -->
         <div class="seccion" id="modulo-musica">
-            <img src="imagen7.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
+            <img src="imagen7.png" class="img-box img-top-left cel-img7" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             <h2 class="titulo-seccion">SUGERIR MÚSICA</h2>
             <p class="texto-normal">Ayúdame con la música<br> que no puede faltar.</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0M2amKtZmo0LQ6-le8baC1yZ47R-IweK83PalYt0EIObJGA/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SUGERIR CANCIÓN</a>
         </div>
 
-        <!-- SECCIÓN 8: ÁLBUM DE FOTOS -->
         <div class="seccion" id="modulo-album">
-            <img src="imagen8.png" class="img-box img-bottom-right" style="display: block; width: 200px; margin-top: -20px; margin-right: -90px;" alt="">
+            <img src="imagen8.png" class="img-box img-bottom-right cel-img8" style="display: block; width: 200px; margin-top: -20px; margin-right: -90px;" alt="">
             <h2 class="titulo-seccion">ÁLBUM DE FOTOS</h2>
             <p class="texto-normal">Sube las fotos<br> y videos<br> que tomes de<br> mi cumple.</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScmQNGoapK8xgvTQfr6dpjUac8bcL_V44ABJwGHziPkILef2A/viewform?usp=sharing&ouid=108226770807790576500" target="_blank" class="btn-dorado">SUBIR FOTOS</a>
         </div>
 
-        <!-- SECCIÓN 9: INSTAGRAM -->
         <div class="seccion" id="modulo-instagram">
-            <img src="imagen9.png" class="img-box img-top-right" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="">
+            <img src="imagen9.png" class="img-box img-top-right cel-img9-sec9" style="display: block; width: 100px; margin-top: -20px; margin-right: -20px; transform: scaleX(-1);" alt="">
             <h2 class="titulo-seccion">INSTAGRAM</h2>
             <p class="texto-normal">Etiquétame usando #Mis15Isabella</p>
             <a href="#" target="_blank" class="btn-dorado">IR A INSTAGRAM</a>
         </div>
 
-        <!-- GALERÍA DE FOTOS -->
         <div class="seccion" id="modulo-galeria">
-            <img src="imagen10.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
-            <img src="imagen9.png" class="img-box img-top-right" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
+            <img src="imagen10.png" class="img-box img-top-left cel-img10-gal" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
+            <img src="imagen9.png" class="img-box img-top-right cel-img9-gal" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
             
             <h2 class="titulo-destacado">Mirá cómo crecí!</h2>
             
@@ -579,10 +638,9 @@
             </div>
         </div>
 
-        <!-- DESPEDIDA FINAL -->
         <div class="seccion seccion-final" style="text-align: center; margin-top: 20px;">
-            <img src="imagen9.png" class="img-box img-top-left" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
-            <img src="imagen3.png" class="img-box img-bottom-right" style="display: block; width: 140px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1);" alt="">
+            <img src="imagen9.png" class="img-box img-top-left cel-img9-fin" style="display: block; width: 100px; margin-top: -20px; margin-left: -20px;" alt="">
+            <img src="imagen3.png" class="img-box img-bottom-right cel-img3-fin" style="display: block; width: 140px; margin-top: -20px; margin-right: -50px; transform: scaleX(-1);" alt="">
 
             <p class="texto-normal">Tu presencia es<br>muy importante </p>
             <h2 class="titulo-despedida">¡NO FALTES!</h2>
@@ -590,9 +648,8 @@
 
     </div>
 
-    <!-- VISOR DE FOTOS (LIGHTBOX) -->
     <div id="modal-galeria" class="modal-oculto" onclick="cerrarModal()">
-        <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+        <span class="cerrar-modal" onclick="cerrarModal()">×</span>
         <img id="img-modal" class="modal-contenido" src="" alt="Foto Ampliada">
     </div>
 
@@ -621,11 +678,14 @@
         const imgModal = document.getElementById('img-modal');
         const imagenesGaleria = document.querySelectorAll('.img-ampliable');
 
+        // --- SISTEMA DE HISTORIAL PARA EL BOTÓN ATRÁS DEL CELULAR ---
         imagenesGaleria.forEach(img => {
             img.addEventListener('click', function(e) {
                 e.stopPropagation(); 
                 imgModal.src = this.src;
                 modal.classList.add('activo');
+                // Empujamos un estado falso al historial del navegador
+                window.history.pushState({modalAbierto: true}, "");
             });
         });
 
@@ -633,6 +693,26 @@
             modal.classList.remove('activo');
             setTimeout(() => { imgModal.src = ""; }, 200); 
         }
+
+        // Si el usuario presiona el botón nativo de "Atrás", este evento se dispara
+        window.addEventListener('popstate', function(event) {
+            // Si el modal está activo, lo cerramos en vez de salir de la app
+            if (modal.classList.contains('activo')) {
+                cerrarModal();
+            }
+        });
+
+        // Aseguramos que si cierran el modal con la "X" o clickeando fuera, limpiemos el historial falso
+        modal.addEventListener('click', function() {
+            if (modal.classList.contains('activo')) {
+                window.history.back();
+            }
+        });
+        document.querySelector('.cerrar-modal').addEventListener('click', function(e) {
+            e.stopPropagation();
+            window.history.back();
+        });
+
 
         // --- CONTADOR ---
         const fechaEvento = new Date(2026, 10, 4, 21, 0, 0).getTime(); 
