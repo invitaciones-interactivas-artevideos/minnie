@@ -361,35 +361,28 @@
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
         .oculto { display: none !important; }
 
-        /* ========================================================
+      /* ========================================================
            ADAPTACIÓN EXCLUSIVA PARA CELULARES
            ======================================================== */
         @media (max-width: 480px) {
-            :root {
-                --fuente-contador-titulo: 'Walt Disney Script', cursive;
-                --imagen-contador-ancho: 120px;
-            }
-
-            .circulo-contador {
-                width: 240px; 
-                height: 240px; 
-                margin: 20px auto; 
-            }
-            .circulo-contador #contador {
-                margin-top: 5px; 
-            }
-            .contenedor-labels-contador {
-                margin-top: -15px; 
-            }
-
+            
             .circulo-contador h3.texto-dorado {
-                font-size: 3rem !important;        
+                font-size: 2.5rem !important;        
                 font-family: var(--fuente-titulos) !important; 
-                color: #f24ea8 !important;            
+                color: var(--color-titulos) !important; 
+                -webkit-text-fill-color: var(--color-titulos) !important; 
                 background: none !important;         
-                -webkit-background-clip: unset !important;
+                -webkit-background-clip: initial !important;
+                background-clip: initial !important;
+                -webkit-text-stroke: 0px transparent !important; 
                 text-shadow: none !important;         
-                font-weight: 600 !important;
+                font-weight: 700 !important; 
+            }
+
+            /* --- AQUÍ SE ACHICAN LOS TEXTOS DE DÍAS, HORAS, ETC --- */
+            .etiquetas-contador {
+                font-size: 0.65rem !important; 
+                gap: 8px !important; 
             }
 
             .img-box[src="imagen5.png"], 
